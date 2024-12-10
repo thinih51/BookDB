@@ -1,7 +1,7 @@
-import db from '$lib/db.js';
+import db from "$lib/db.js";
 
 export async function load() {
-    return {
+    return{
         books: await db.getBooks()
     }
 }

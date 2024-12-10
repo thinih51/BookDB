@@ -11,7 +11,7 @@
         </h1>
         <p class="lead">
             ShedaDB is the perfect platform for book enthusiasts to organize,
-            discover, and enjoy their favorite reads. Whether you’re a
+            discover, and enjoy their favorite reads. Whether you're a
             passionate reader, building a personal library, or exploring new
             genres, ShedaDB makes it effortless and enjoyable.
         </p>
@@ -52,7 +52,7 @@
                 ShedaDB helps you stay on top of your reading habits.
             </li>
             <li class="list-group-item">
-                It’s easy to use, visually appealing, and customizable to your
+                It's easy to use, visually appealing, and customizable to your
                 needs.
             </li>
             <li class="list-group-item">
@@ -67,7 +67,4 @@
             >
         </p>
     </section>
-
-    <!-- Footer Section -->
-    <Footer />
 </div>

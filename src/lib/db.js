@@ -31,6 +31,27 @@ async function getBooks() {
     return books;
 }
 
+// Get favorite books
+async function getFavoriteBooks() {
+    let books = [];
+    try {
+        const collection = db.collection("books");
+
+        // Filter for favorite books
+        const query = { favorite: true };
+
+        // Get all objects that match the query
+        books = await collection.find(query).toArray();
+        books.forEach((book) => {
+            book._id = book._id.toString(); // Convert ObjectId to String
+        });
+    } catch (error) {
+        console.log(error);
+        // TODO: error handling
+    }
+    return books;
+}
+
 // Get book by id
 async function getBook(id) {
     let book = null;
@@ -68,23 +89,6 @@ async function createBook(book) {
 }
 
 // Update a book
-// Example book object:
-/* 
-{ 
-  _id: "6630e72c95e12055f661ff13",
-  title: "The Mystery of Altura",
-  year: 2024,
-  pages: 350,
-  authors: [
-    "Lena Herzog",
-    "Maximilian Schröder",
-    "Sophia Neumann"
-  ],
-  cover: "/images/Altura.png",
-  favorite: true
-} 
-*/
-// Returns: id of the updated book or null if the book could not be updated
 async function updateBook(book) {
     try {
         let id = book._id;
@@ -108,7 +112,6 @@ async function updateBook(book) {
 }
 
 // Delete book by id
-// Returns: id of the deleted book or null if the book could not be deleted
 async function deleteBook(id) {
     try {
         const collection = db.collection("books");
@@ -131,8 +134,9 @@ async function deleteBook(id) {
 // Export all functions so that they can be used in other files
 export default {
     getBooks,
+    getFavoriteBooks,
     getBook,
     createBook,
     updateBook,
-    deleteBook,
-};
+    deleteBook
+}

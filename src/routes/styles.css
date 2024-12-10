@@ -3,10 +3,8 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
-    background-color: #f5f7fa;
-    /* Sanftes Hellblau */
-    color: #333;
-    /* Dunkles Grau für Text */
+    background: linear-gradient(to bottom right, #e8f0fe, #b0c4de); /* Sanftes Farbverlauf-Design */
+    color: #333; /* Dunkles Grau für Text */
     line-height: 1.6;
 }
 
@@ -14,24 +12,26 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+    /* Kein sichtbarer Hintergrund */
 }
 
 /* Header Styling */
 header {
     text-align: center;
     padding: 20px 0;
-    background-color: #4a90e2;
-    /* Ein frisches Blau */
     color: white;
+    font-family: 'Georgia', serif;
 }
 
 header h1 {
     font-size: 2.5rem;
     margin-bottom: 10px;
+    color: #2c3e50; /* Dunkles Blau */
 }
 
 header p {
     font-size: 1.2rem;
+    color: #4a90e2;
 }
 
 /* Section Styling */
@@ -41,8 +41,7 @@ section {
 
 section h2 {
     text-align: center;
-    color: #4a90e2;
-    /* Akzentfarbe */
+    color: #2c3e50;
     margin-bottom: 20px;
 }
 
@@ -61,17 +60,17 @@ ul.list-group {
 }
 
 ul.list-group li {
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.8); /* Halbtransparenter Hintergrund */
     border: 1px solid #ddd;
     padding: 10px 15px;
     margin-bottom: 10px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: #333;
 }
 
 ul.list-group li:hover {
-    background-color: #e8f0fe;
-    /* Heller Akzent beim Hover */
+    background-color: rgba(255, 255, 255, 1); /* Helleres Weiß beim Hover */
 }
 
 /* Buttons */
@@ -118,8 +117,57 @@ ul.list-group li:hover {
 footer {
     text-align: center;
     padding: 10px 0;
-    background-color: #4a90e2;
+    background-color: #2c3e50;
     color: white;
     margin-top: 30px;
     font-size: 0.9rem;
+}
+
+/* General Navbar Styling */
+.navbar {
+    background: linear-gradient(90deg, #2c3e50, #4a90e2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-brand {
+    font-family: "Georgia", serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.navbar-nav {
+    margin-left: auto;
+}
+
+/* Navigation Links */
+.nav-link {
+    transition: all 0.3s ease-in-out;
+    font-size: 1.1rem;
+    color: white;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    transform: scale(1.05);
+}
+
+/* Hover Glow Effect */
+.hover-glow {
+    position: relative;
+}
+
+.hover-glow::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0%;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease-in-out;
+    transform: translate(-50%, -50%);
+}
+
+.hover-glow:hover::after {
+    width: 80%;
 }
