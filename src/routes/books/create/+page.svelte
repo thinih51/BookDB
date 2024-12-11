@@ -1,6 +1,10 @@
+<script>
+    let {form} = $props();
+</script>
+
 <div class="container mt-5">
     <h1 class="text-center mb-4">Add a New Book</h1>
-    <form method="post" use:enhance>
+    <form method="post" action="?/create" class= "needs-validation">
         <div class="mb-3">
             <label for="title" class="form-label">Title</label>
             <input
@@ -66,3 +70,11 @@
         <button type="submit" class="btn btn-primary">Add Book</button>
     </form>
 </div>
+
+{#if form?.success}
+    <p class="mt-3 text-success">Book created successfully!</p>
+{/if}
+
+{#if form?.error}
+    <p class="mt-3 text-danger">{form.error}</p>
+{/if}
