@@ -3,7 +3,7 @@
     import "./styles.css";
 </script>
 
-<div class="container mt-5">
+<div class="container mt-3">
     <!-- Welcome Section -->
     <header class="text-center mb-4">
         <h1 class="display-4">
