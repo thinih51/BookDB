@@ -4,11 +4,11 @@
             © {new Date().getFullYear()} ShedaDB. All Rights Reserved.
         </p>
         <div>
-            <a href="/privacy" class="text-decoration-none text-white mx-2"
-                >Privacy Policy</a
+            <span class="text-decoration-none text-white mx-2"
+                >Privacy Policy</span
             >
-            <a href="/terms" class="text-decoration-none text-white mx-2"
-                >Terms of Service</a
+            <span class="text-decoration-none text-white mx-2"
+                >Terms of Service</span
             >
         </div>
     </div>

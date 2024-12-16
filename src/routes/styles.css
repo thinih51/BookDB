@@ -132,6 +132,7 @@ footer {
 .navbar-brand {
     font-family: "Georgia", serif;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    text-decoration: none; /* Entfernt Textdekoration bei Navbar-Brand */
 }
 
 .navbar-nav {
@@ -143,17 +144,20 @@ footer {
     transition: all 0.3s ease-in-out;
     font-size: 1.1rem;
     color: white;
+    text-decoration: none !important; /* Entfernt alle Vererbungen */
 }
 
 .nav-link:hover {
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 4px;
     transform: scale(1.05);
+    text-decoration: none !important; /* Sicherstellen, dass es beim Hover keine Textdekoration gibt */
 }
 
 /* Hover Glow Effect */
 .hover-glow {
     position: relative;
+    text-decoration: none !important; /* Entfernt jegliche Textdekoration */
 }
 
 .hover-glow::after {
@@ -166,6 +170,7 @@ footer {
     background-color: white;
     transition: width 0.3s ease-in-out;
     transform: translate(-50%, -50%);
+    text-decoration: none;
 }
 
 .hover-glow:hover::after {

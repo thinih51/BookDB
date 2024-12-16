@@ -1,4 +1,6 @@
 <script>
+    import { enhance } from "$app/forms";
+    
     let { book } = $props();
 </script>
 
@@ -32,8 +34,17 @@
                         href={`/books/${book._id}`}
                         class="btn btn-primary btn-sm">Details</a
                     >
+
                     {#if book.favorite}
-                        <span class="badge bg-success ms-2">Favorite</span>
+                        <form method="POST" action="?/removeFromFavorite" use:enhance>
+                            <input type="hidden" name="id" value={book._id} />
+                            <button class="btn btn-danger">Remove from favorite</button>
+                        </form>
+                    {:else}
+                        <form method="POST" action="?/addToFavorite" use:enhance>
+                            <input type="hidden" name="id" value={book._id} />
+                            <button class="btn btn-success">Add to Favorite</button>
+                        </form>
                     {/if}
                 </div>
             </div>
