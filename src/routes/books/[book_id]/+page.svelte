@@ -16,12 +16,23 @@
         <div class="col-md-8">
             <p>Year: {data.book.year}</p>
             <p>Pages: {data.book.pages}</p>
-            <p>Author{data.book.authors.length > 1 ? 's' : ''}:</p>
+            <p>Author{data.book.authors.length > 1 ? "s" : ""}:</p>
             <ul>
                 {#each data.book.authors as author}
                     <li>{author}</li>
                 {/each}
             </ul>
+            <form
+                method="post"
+                action="?/delete"
+                style="display: inline-block;"
+            >
+                <!-- Das versteckte Feld mit der Buch-ID -->
+                <input type="hidden" name="id" value={data.book._id} />
+                <button type="submit" class="btn btn-danger">
+                    Delete Book
+                </button>
+            </form>
         </div>
     </div>
 </div>

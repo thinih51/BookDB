@@ -12,6 +12,6 @@ export const actions = {
       const data = await request.formData();
   
       await db.deleteBook(data.get("id"));
-      redirect(303, "/books");
+      throw redirect(303, "/books");
     },
   };

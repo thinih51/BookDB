@@ -1,25 +1,29 @@
 <script>
     import { onMount } from "svelte";
     import { darkMode } from "$lib/stores/theme.js";
+    import { get } from "svelte/store";
 
-    // Beim ersten Laden den Wert aus localStorage holen
+    // Nach dem Mount im Browser:
     onMount(() => {
+        // 1) Aus localStorage lesen
         const storedMode = localStorage.getItem("darkMode");
         if (storedMode !== null) {
             darkMode.set(storedMode === "true");
         }
+
+        // 2) Klasse am Body setzen
+        document.body.classList.toggle("dark-mode", get(darkMode));
     });
 
-    // Sobald sich $darkMode ändert, wird dieser Code ausgeführt:
-    // - Speichern im localStorage
-    // - CSS-Klasse auf <body> setzen/entfernen
-    $: {
-        localStorage.setItem("darkMode", $darkMode);
-        document.body.classList.toggle("dark-mode", $darkMode);
-    }
-
     function toggleDarkMode() {
-        darkMode.set(!$darkMode);
+        // 1) darkMode toggeln
+        darkMode.set(!get(darkMode));
+
+        // 2) in localStorage speichern
+        localStorage.setItem("darkMode", get(darkMode));
+
+        // 3) Klasse am Body anpassen
+        document.body.classList.toggle("dark-mode", get(darkMode));
     }
 </script>
 
