@@ -1,10 +1,15 @@
+/* ======================================================
+   Light Mode (Standard) Styling
+   ====================================================== */
+
 /* General Styling */
 body {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(to bottom right, #e8f0fe, #b0c4de); /* Sanftes Farbverlauf-Design */
-    color: #333; /* Dunkles Grau für Text */
+    background: linear-gradient(to bottom right, #e8f0fe, #b0c4de);
+    /* Sanfter Farbverlauf */
+    color: #333;
     line-height: 1.6;
 }
 
@@ -12,7 +17,6 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    /* Kein sichtbarer Hintergrund */
 }
 
 /* Header Styling */
@@ -26,7 +30,8 @@ header {
 header h1 {
     font-size: 2.5rem;
     margin-bottom: 10px;
-    color: #2c3e50; /* Dunkles Blau */
+    color: #2c3e50;
+    /* Dunkles Blau */
 }
 
 header p {
@@ -60,7 +65,7 @@ ul.list-group {
 }
 
 ul.list-group li {
-    background-color: rgba(255, 255, 255, 0.8); /* Halbtransparenter Hintergrund */
+    background-color: rgba(255, 255, 255, 0.8);
     border: 1px solid #ddd;
     padding: 10px 15px;
     margin-bottom: 10px;
@@ -70,7 +75,7 @@ ul.list-group li {
 }
 
 ul.list-group li:hover {
-    background-color: rgba(255, 255, 255, 1); /* Helleres Weiß beim Hover */
+    background-color: rgba(255, 255, 255, 1);
 }
 
 /* Buttons */
@@ -132,7 +137,7 @@ footer {
 .navbar-brand {
     font-family: "Georgia", serif;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-    text-decoration: none; /* Entfernt Textdekoration bei Navbar-Brand */
+    text-decoration: none;
 }
 
 .navbar-nav {
@@ -144,20 +149,20 @@ footer {
     transition: all 0.3s ease-in-out;
     font-size: 1.1rem;
     color: white;
-    text-decoration: none !important; /* Entfernt alle Vererbungen */
+    text-decoration: none !important;
 }
 
 .nav-link:hover {
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 4px;
     transform: scale(1.05);
-    text-decoration: none !important; /* Sicherstellen, dass es beim Hover keine Textdekoration gibt */
+    text-decoration: none !important;
 }
 
 /* Hover Glow Effect */
 .hover-glow {
     position: relative;
-    text-decoration: none !important; /* Entfernt jegliche Textdekoration */
+    text-decoration: none !important;
 }
 
 .hover-glow::after {
@@ -170,9 +175,127 @@ footer {
     background-color: white;
     transition: width 0.3s ease-in-out;
     transform: translate(-50%, -50%);
-    text-decoration: none;
 }
 
 .hover-glow:hover::after {
     width: 80%;
+}
+
+
+/* ======================================================
+   Dark Mode Overrides
+   (Aktiviert, wenn <body> die Klasse "dark-mode" hat)
+   ====================================================== */
+
+body.dark-mode {
+    /* "Tiefdunkler" Hintergrund mit leichtem Braun-/Graustich */
+    background: #353333;
+    color: #cccccc;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3 {
+    color: #f1f1f1;
+    /* Etwas helleres Grau/Weiß für Überschriften */
+}
+
+/* Links im Dark Mode */
+body.dark-mode a {
+    color: #b3afa1;
+}
+
+body.dark-mode a:hover {
+    color: #b3afa1;
+}
+
+/* Listen-Elemente im Dark Mode */
+body.dark-mode ul.list-group li {
+    /* Etwas helleres Dunkelgrau für Kontrast zum Body-Hintergrund */
+    background-color: #454242;
+    border-color: #5b5858;
+    color: #cccccc;
+}
+
+body.dark-mode ul.list-group li:hover {
+    background-color: #504c4c;
+}
+
+/* Navbar im Dark Mode */
+body.dark-mode .navbar {
+    background-color: #2d2b2b;
+    background-image: none;
+    /* Deaktiviert Light-Mode-Gradient */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+body.dark-mode .navbar-brand,
+body.dark-mode .nav-link {
+    color: #ffdd66;
+}
+
+body.dark-mode .nav-link:hover {
+    color: #ffe680;
+}
+
+/* Buttons im Dark Mode */
+body.dark-mode .btn-primary {
+    background-color: #555;
+    /* dunkles Grau */
+    color: #f1f1f1;
+}
+
+body.dark-mode .btn-primary:hover {
+    background-color: #444;
+}
+
+/* Erfolg-Button (grün) */
+body.dark-mode .btn-success {
+    background-color: #2b5f2c;
+    /* dunkleres Grün */
+    color: #f1f1f1;
+}
+
+body.dark-mode .btn-danger {
+    background-color: #9f1c28;
+    /* dunkles Rot */
+    color: #fff;
+    border: none;
+}
+
+body.dark-mode .btn-danger:hover {
+    background-color: #871621;
+}
+
+body.dark-mode .btn-success:hover {
+    background-color: #234a24;
+}
+
+/* Sekundär-Button (neutrales Grau) */
+body.dark-mode .btn-secondary {
+    background-color: #444;
+    color: #f1f1f1;
+}
+
+body.dark-mode .btn-secondary:hover {
+    background-color: #333;
+}
+
+.dark-section {
+    /* Dunkler Hintergrund */
+    background-color: #2a2a2a;
+    /* Helle Textfarbe */
+    color: #f2f2f2;
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.dark-section h1 {
+    color: #ffffff;
+}
+
+/* Footer im Dark Mode */
+body.dark-mode footer {
+    background-color: #2d2b2b;
+    color: #aaaaaa;
 }
