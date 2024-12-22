@@ -14,9 +14,9 @@
             />
         </div>
         <div class="col-md-8">
-            <p>Jahr: {data.book.year}</p>
-            <p>Dauer: {data.book.pages}</p>
-            <p>Cast:</p>
+            <p>Year: {data.book.year}</p>
+            <p>Pages: {data.book.pages}</p>
+            <p>Author{data.book.authors.length > 1 ? 's' : ''}:</p>
             <ul>
                 {#each data.book.authors as author}
                     <li>{author}</li>
