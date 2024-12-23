@@ -131,6 +131,22 @@ async function deleteBook(id) {
     return null;
 }
 
+async function getAuthorByName(authorName) {
+    try {
+        const collection = db.collection("authors");
+        const author = await collection.findOne({ name: authorName });
+        if (author) {
+            author._id = author._id.toString();
+            return author;
+        } else {
+            console.log("No author with name " + authorName);
+        }
+    } catch (error) {
+        console.log(error.message);
+    }
+    return null;
+}
+
 // Export all functions so that they can be used in other files
 export default {
     getBooks,
@@ -138,5 +154,6 @@ export default {
     getBook,
     createBook,
     updateBook,
-    deleteBook
+    deleteBook,
+    getAuthorByName
 }

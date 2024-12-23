@@ -19,7 +19,11 @@
             <p>Author{data.book.authors.length > 1 ? "s" : ""}:</p>
             <ul>
                 {#each data.book.authors as author}
-                    <li>{author}</li>
+                    <li>
+                        <a href={"/authors/" + encodeURIComponent(author)}>
+                            {author}
+                        </a>
+                    </li>
                 {/each}
             </ul>
             <form
