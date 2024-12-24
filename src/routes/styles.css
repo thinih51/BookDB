@@ -181,6 +181,13 @@ footer {
     width: 80%;
 }
 
+.card {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    max-width: 600px;
+    margin: 0 auto;
+    /* zentrieren falls gewünscht */
+}
 
 /* ======================================================
    Dark Mode Overrides
@@ -195,7 +202,8 @@ body.dark-mode {
 
 body.dark-mode h1,
 body.dark-mode h2,
-body.dark-mode h3 {
+body.dark-mode h3,
+body.dark-mode p.lead {
     color: #f1f1f1;
     /* Etwas helleres Grau/Weiß für Überschriften */
 }

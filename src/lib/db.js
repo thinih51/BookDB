@@ -75,13 +75,22 @@ async function getBook(id) {
 
 // Create a new book
 async function createBook(book) {
-    book.cover = "/images/placeholder.jpg"; // Default cover image
-    book.authors = []; // Empty list for authors
-    book.favorite = false; // Default value
+    if (!book.cover) {
+        book.cover = "/images/placeholder.jpg";
+    }
+    // Nur wenn authors nicht existiert, auf leeres Array setzen
+    if (!book.authors) {
+        book.authors = [];
+    }
+    // Nur wenn favorite nicht definiert ist, auf false setzen
+    if (!("favorite" in book)) {
+        book.favorite = false;
+    }
+
     try {
         const collection = db.collection("books");
         const result = await collection.insertOne(book);
-        return result.insertedId.toString(); // Return the book ID
+        return result.insertedId.toString();
     } catch (error) {
         console.log(error.message);
     }

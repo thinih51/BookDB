@@ -9,7 +9,7 @@
         <h1 class="display-4">
             Welcome to ShedaDB - Your Personal Book Database!
         </h1>
-        <p>
+        <p class="lead">
             ShedaDB is the perfect platform for book enthusiasts to organize,
             discover, and enjoy their favorite reads. Whether you're a
             passionate reader, building a personal library, or exploring new
