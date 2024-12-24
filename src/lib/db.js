@@ -156,6 +156,33 @@ async function getAuthorByName(authorName) {
     return null;
 }
 
+async function createAuthor(author) {
+    try {
+        // Validierung: Prüfe, ob alle erforderlichen Felder vorhanden sind
+        if (!author.name || typeof author.name !== "string") {
+            throw new Error("Author name is required and must be a string.");
+        }
+        if (!author.age || typeof author.age !== "number") {
+            throw new Error("Author age is required and must be a number.");
+        }
+        if (!author.gender || !["Male", "Female", "Other"].includes(author.gender)) {
+            throw new Error("Author gender is required and must be 'Male', 'Female', or 'Other'.");
+        }
+
+        // Collection "authors" auswählen
+        const collection = db.collection("authors");
+
+        // Autor in der Datenbank speichern
+        const result = await collection.insertOne(author);
+
+        // Erfolgreich? Die ID des neuen Autors zurückgeben
+        return result.insertedId.toString();
+    } catch (error) {
+        console.log("Error creating author:", error.message);
+        return null;
+    }
+}
+
 // Export all functions so that they can be used in other files
 export default {
     getBooks,
@@ -164,5 +191,6 @@ export default {
     createBook,
     updateBook,
     deleteBook,
-    getAuthorByName
+    getAuthorByName,
+    createAuthor
 }

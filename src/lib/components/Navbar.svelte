@@ -79,6 +79,14 @@
                             Add New Book
                         </a>
                     </li>
+                    <li class="nav-item px-3">
+                        <a
+                            class="nav-link text-white fw-bold"
+                            href="/authors/create"
+                        >
+                            Add New Author
+                        </a>
+                    </li>
                     <!-- Hier der Dark-Mode-Schalter -->
                     <li class="nav-item px-3">
                         <button
