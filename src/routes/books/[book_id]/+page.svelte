@@ -1,8 +1,8 @@
 <script>
-    let { data } = $props();
+    let { data, form } = $props();
 </script>
 
-<div class="container mt-4">
+<div class="container mt-3">
     <a href="/books" class="btn btn-primary">Back</a>
     <h1>{data.book.title}</h1>
     <div class="row">
@@ -39,4 +39,61 @@
             </form>
         </div>
     </div>
+</div>
+<div class="container mt-3">
+    <h1>Update Book</h1>
+    <form class="mt-4" method="POST" action="?/update">
+        <input type="hidden" name="_id" value={data.book._id} />
+        <div class="mb-3">
+            <label class="form-label" for="title">Title</label>
+            <input
+                name="title"
+                bind:value={data.book.title}
+                class="form-control"
+                type="text"
+            />
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="year">Year</label>
+            <input
+                name="year"
+                bind:value={data.book.year}
+                class="form-control"
+                type="number"
+            />
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="pages">Pages</label>
+            <input
+                name="pages"
+                bind:value={data.book.pages}
+                class="form-control"
+                type="number"
+            />
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="authors">Authors</label>
+            <input
+                name="authors"
+                value={data.book.authors?.join(", ")}
+                class="form-control"
+                type="text"
+            />
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="cover">Cover URL</label>
+            <input
+                name="cover"
+                bind:value={data.book.cover}
+                class="form-control"
+                type="text"
+            />
+        </div>
+        <button class="btn btn-success">Save Changes</button>
+    </form>
+
+    <!-- Erfolgsmeldung nach Update -->
+    {#if form?.success}
+        <p class="text-success mt-3">Book updated successfully!</p>
+    {/if}
 </div>

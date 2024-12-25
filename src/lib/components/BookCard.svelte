@@ -4,7 +4,7 @@
     let { book } = $props();
 </script>
 
-<div class="card mb-3 shadow-sm" style="max-width: 540px;">
+<div class="card mb-3 shadow-sm">
     <div class="row g-0">
         <!-- Book Cover -->
         <div class="col-md-4">

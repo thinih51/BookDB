@@ -3,7 +3,7 @@
     let { data } = $props();
 </script>
 
-<div class="container mt-5">
+<div class="container mt-3">
     <h1 class="text-center mb-4">Favorite Books</h1>
 
     {#if data.books && data.books.length > 0}
