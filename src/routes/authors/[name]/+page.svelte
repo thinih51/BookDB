@@ -1,10 +1,14 @@
 <script>
     import AuthorCard from "$lib/components/AuthorCard.svelte";
     let { data } = $props();
+    
+    function goBack() {
+        window.history.back();
+    }
 </script>
 
 <div class="container mt-3">
-    <a href="/books" class="btn btn-primary">Back to Books</a>
+    <button class="btn btn-primary" onclick={goBack}>Back</button>
     
     <AuthorCard author={data.author} />
 </div>
