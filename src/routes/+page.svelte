@@ -1,10 +1,8 @@
 <script>
-    import Footer from "$lib/components/Footer.svelte";
     import "./styles.css";
 </script>
 
 <div class="container mt-3">
-    <!-- Welcome Section -->
     <header class="text-center mb-4">
         <h1 class="display-4">
             Welcome to ShedaDB - Your Personal Book Database!
@@ -17,7 +15,6 @@
         </p>
     </header>
 
-    <!-- Features Section -->
     <section class="mb-5">
         <h2 class="text-center">What Can You Do with ShedaDB?</h2>
         <ul class="list-group list-group-flush">
@@ -30,21 +27,30 @@
                 in a personal favorites list.
             </li>
             <li class="list-group-item">
-                <strong>Discover Insights:</strong> View statistics about your collection,
-                like the number of books or your favorite genres.
-            </li>
-            <li class="list-group-item">
                 <strong>Search and Filter:</strong> Quickly find books by title,
-                author, or category.
+                author, or category, and sort them by title, year, or pages in ascending
+                order.
             </li>
             <li class="list-group-item">
                 <strong>Add New Books:</strong> Expand your collection with detailed
                 entries for new reads.
             </li>
+            <li class="list-group-item">
+                <strong>Add New Authors:</strong> Include newly discovered or favorite
+                authors to enrich your database.
+            </li>
+            <li class="list-group-item">
+                <strong>Click Author Names for Details:</strong> In a book's detail
+                view, click on the author's name to see more information about them.
+            </li>
+            <li class="list-group-item">
+                <strong>Edit Book Properties:</strong> On a book's detail page, you
+                can also modify its properties, such as title, author, year, or number
+                of pages.
+            </li>
         </ul>
     </section>
 
-    <!-- Why Use ShedaDB Section -->
     <section class="mb-5">
         <h2 class="text-center">Why Use ShedaDB?</h2>
         <ul class="list-group list-group-flush">
@@ -54,10 +60,6 @@
             <li class="list-group-item">
                 It's easy to use, visually appealing, and customizable to your
                 needs.
-            </li>
-            <li class="list-group-item">
-                Future features include recommendations, book reviews, and
-                progress tracking!
             </li>
         </ul>
         <p class="text-center mt-3">

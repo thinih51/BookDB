@@ -12,12 +12,12 @@ export const actions = {
     const data = await request.formData();
 
     let book = {
-      _id: data.get("_id"), // Buch-ID
-      title: data.get("title"), // Aktualisierter Titel
-      year: parseInt(data.get("year"), 10), // Aktualisiertes Jahr
-      pages: parseInt(data.get("pages"), 10), // Aktualisierte Seitenanzahl
-      authors: data.get("authors").split(",").map((author) => author.trim()), // Aktualisierte Autorenliste
-      cover: data.get("cover"), // Aktualisiertes Cover
+      _id: data.get("_id"),
+      title: data.get("title"),
+      year: parseInt(data.get("year"), 10),
+      pages: parseInt(data.get("pages"), 10),
+      authors: data.get("authors").split(",").map((author) => author.trim()),
+      cover: data.get("cover"),
     };
 
     await db.updateBook(book);

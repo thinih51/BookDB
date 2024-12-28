@@ -31,7 +31,6 @@
                 action="?/delete"
                 style="display: inline-block;"
             >
-                <!-- Das versteckte Feld mit der Buch-ID -->
                 <input type="hidden" name="id" value={data.book._id} />
                 <button type="submit" class="btn btn-danger">
                     Delete Book
@@ -92,7 +91,6 @@
         <button class="btn btn-success">Save Changes</button>
     </form>
 
-    <!-- Erfolgsmeldung nach Update -->
     {#if form?.success}
         <p class="text-success mt-3">Book updated successfully!</p>
     {/if}

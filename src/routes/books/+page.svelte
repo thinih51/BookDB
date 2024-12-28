@@ -2,12 +2,11 @@
     import BookCard from "$lib/components/BookCard.svelte";
     import { writable, derived } from "svelte/store";
 
-    let { data } = $props(); // Bücher-Daten von der Server-Seite
+    let { data } = $props();
 
-    let searchQuery = writable(""); // Suchanfrage
-    let sortBy = writable("title"); // Standard-Sortierung nach Titel
+    let searchQuery = writable("");
+    let sortBy = writable("title");
 
-    // Gefilterte Bücher basierend auf Suchanfrage und Sortierung
     const filteredBooks = derived(
         [searchQuery, sortBy],
         ([$searchQuery, $sortBy]) => {
@@ -32,33 +31,27 @@
         },
     );
 
-    // Debouncing für performante Suchabfragen
     let debounceTimeout;
     function debounceSearch(query) {
         clearTimeout(debounceTimeout);
         debounceTimeout = setTimeout(() => {
             searchQuery.set(query);
-        }, 300); // 300ms Verzögerung
+        }, 300);
     }
 </script>
 
 <div class="container mt-3">
     <h1 class="text-center mb-4">All Books</h1>
 
-    <!-- Such- und Filteroptionen -->
     <div class="row mb-3">
-        <!-- Suchfeld -->
         <div class="col-md-6">
-            <!-- svelte-ignore event_directive_deprecated -->
             <input
                 type="text"
                 class="form-control"
                 placeholder="Search by title, author, or year"
-                on:input={(e) => debounceSearch(e.target.value)}
+                oninput={(e) => debounceSearch(e.target.value)}
             />
         </div>
-
-        <!-- Sortieroptionen -->
         <div class="col-md-6">
             <select class="form-select" bind:value={$sortBy}>
                 <option value="title">Sort by Title</option>
@@ -68,7 +61,6 @@
         </div>
     </div>
 
-    <!-- Gefilterte und sortierte Bücher anzeigen -->
     <div class="row">
         {#if $filteredBooks.length > 0}
             {#each $filteredBooks as book}

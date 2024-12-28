@@ -23,6 +23,6 @@ export const actions = {
             _id: id,
             favorite: false
         }
-        await db.updateBook(book);;
+        await db.updateBook(book);
     }
 }

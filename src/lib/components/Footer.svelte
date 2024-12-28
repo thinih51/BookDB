@@ -13,3 +13,21 @@
         </div>
     </div>
 </footer>
+
+<style>
+    /* Base styling for the footer (light mode) */
+    footer {
+        text-align: center;
+        padding: 10px 0;
+        background-color: #2c3e50;
+        color: white;
+        margin-top: 30px;
+        font-size: 0.9rem;
+    }
+
+    /* Dark Mode override */
+    :global(body.dark-mode) footer {
+        background-color: #2d2b2b;
+        color: #aaaaaa;
+    }
+</style>

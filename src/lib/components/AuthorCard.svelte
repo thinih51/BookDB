@@ -13,3 +13,12 @@
         <p class="card-text">Gender: {author.gender}</p>
     {/if}
 </div>
+
+<style>
+    .card {
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+</style>

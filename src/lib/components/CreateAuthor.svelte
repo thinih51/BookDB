@@ -1,5 +1,5 @@
 <script>
-    let { form } = $props(); // Erfolgs-/Fehlermeldungen von der Action
+    let { form } = $props();
 </script>
 
 <div class="container mt-3">

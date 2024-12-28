@@ -1,12 +1,12 @@
 <script>
     import { enhance } from "$app/forms";
-    
+
     let { book } = $props();
+
 </script>
 
 <div class="card mb-3 shadow-sm">
     <div class="row g-0">
-        <!-- Book Cover -->
         <div class="col-md-4">
             <img
                 src={book.cover || "/images/placeholder.jpg"}
@@ -14,11 +14,10 @@
                 alt={book.title}
             />
         </div>
-
-        <!-- Book Details -->
         <div class="col-md-8">
             <div class="card-body">
                 <h5 class="card-title">{book.title}</h5>
+
                 <p class="card-text">
                     <strong>Author(s):</strong>
                     {book.authors?.join(", ") || "Unknown"}
@@ -34,16 +33,27 @@
                         href={`/books/${book._id}`}
                         class="btn btn-primary btn-sm">Details</a
                     >
-
                     {#if book.favorite}
-                        <form method="POST" action="?/removeFromFavorite" use:enhance>
+                        <form
+                            method="POST"
+                            action="?/removeFromFavorite"
+                            use:enhance
+                        >
                             <input type="hidden" name="id" value={book._id} />
-                            <button class="btn btn-danger">Remove from favorite</button>
+                            <button class="btn btn-danger"
+                                >Remove from Favorite</button
+                            >
                         </form>
                     {:else}
-                        <form method="POST" action="?/addToFavorite" use:enhance>
+                        <form
+                            method="POST"
+                            action="?/addToFavorite"
+                            use:enhance
+                        >
                             <input type="hidden" name="id" value={book._id} />
-                            <button class="btn btn-success">Add to Favorite</button>
+                            <button class="btn btn-success"
+                                >Add to Favorite</button
+                            >
                         </form>
                     {/if}
                 </div>

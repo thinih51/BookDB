@@ -106,3 +106,77 @@
         </div>
     </nav>
 </div>
+
+<style>
+    /* 
+      Wrap Bootstrap selectors in :global() because 
+      we want these styles to apply to the actual .navbar, .navbar-brand, etc. 
+    */
+
+    :global(.navbar) {
+        background: linear-gradient(90deg, #2c3e50, #4a90e2);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    :global(.navbar-brand) {
+        font-family: "Georgia", serif;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+        text-decoration: none;
+    }
+
+    :global(.navbar-nav) {
+        margin-left: auto;
+    }
+
+    :global(.nav-link) {
+        transition: all 0.3s ease-in-out;
+        font-size: 1.1rem;
+        color: white;
+        text-decoration: none !important;
+    }
+
+    :global(.nav-link:hover) {
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 4px;
+        transform: scale(1.05);
+        text-decoration: none !important;
+    }
+
+    /* Optional Glow Effect (if used) */
+    :global(.hover-glow) {
+        position: relative;
+        text-decoration: none !important;
+    }
+
+    :global(.hover-glow)::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0%;
+        height: 2px;
+        background-color: white;
+        transition: width 0.3s ease-in-out;
+        transform: translate(-50%, -50%);
+    }
+
+    :global(.hover-glow:hover)::after {
+        width: 80%;
+    }
+
+    /* Dark Mode Overrides */
+    :global(body.dark-mode .navbar) {
+        background-color: #2d2b2b;
+        background-image: none; /* Removes the gradient in dark mode */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    }
+
+    :global(body.dark-mode .navbar-brand),
+    :global(body.dark-mode .nav-link) {
+        color: #ffdd66;
+    }
+
+    :global(body.dark-mode .nav-link:hover) {
+        color: #ffe680;
+    }
+</style>
