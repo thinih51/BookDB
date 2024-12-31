@@ -20,7 +20,7 @@
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
                 <strong>Organize Your Books:</strong> Keep track of titles, authors,
-                genres, and more.
+                and more.
             </li>
             <li class="list-group-item">
                 <strong>Build Your Favorites:</strong> Save your most-loved books
@@ -47,6 +47,10 @@
                 <strong>Edit Book Properties:</strong> On a book's detail page, you
                 can also modify its properties, such as title, author, year, or number
                 of pages.
+            </li>
+            <li class="list-group-item">
+                <strong>Switch to Dark Mode:</strong> Easily toggle between light
+                and dark mode for a personalized experience.
             </li>
         </ul>
     </section>

@@ -2,7 +2,6 @@
     import { enhance } from "$app/forms";
 
     let { book } = $props();
-
 </script>
 
 <div class="card mb-3 shadow-sm">
