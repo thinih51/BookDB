@@ -4,7 +4,7 @@
     let { book } = $props();
 </script>
 
-<div class="card mb-3 shadow-sm">
+<div class="card mb-3 shadow-sm visible">
     <div class="row g-0">
         <div class="col-md-4">
             <img
@@ -60,3 +60,23 @@
         </div>
     </div>
 </div>
+
+<style>
+    .card {
+        transform: scale(1);
+        opacity: 0;
+        transition:
+            transform 0.3s ease,
+            opacity 0.5s ease;
+    }
+
+    .card.visible {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+</style>
