@@ -1,5 +1,4 @@
 <script>
-    import "./styles.css";
     import { fly } from "svelte/transition";
     import { backOut } from "svelte/easing";
 </script>
