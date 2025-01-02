@@ -12,7 +12,7 @@ html body {
 }
 
 body.dark-mode {
-    background: #353333;
+    background: #353333 !important;
     color: #cccccc;
 }
 
