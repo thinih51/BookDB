@@ -1,6 +1,7 @@
 <script>
     import { fly } from "svelte/transition";
     import { backOut } from "svelte/easing";
+    import "./styles.css";
 </script>
 
 <div class="container mt-3">
