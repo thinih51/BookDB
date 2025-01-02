@@ -50,7 +50,7 @@
                         <form
                             method="POST"
                             action="?/removeFromFavorite"
-                            use:enhance
+                            use:enhance={{updateBook}}
                         >
                             <input type="hidden" name="id" value={book._id} />
                             <button
@@ -64,7 +64,7 @@
                         <form
                             method="POST"
                             action="?/addToFavorite"
-                            use:enhance
+                            use:enhance={{updateBook}}
                         >
                             <input type="hidden" name="id" value={book._id} />
                             <button
