@@ -110,4 +110,14 @@
         background-color: rgba(255, 255, 255, 1);
         transform: scale(1.02);
     }
+
+    :global(.dark-mode ul.list-group li) {
+        background-color: #454242;
+        border-color: #5b5858;
+        color: #cccccc;
+    }
+
+    :global(.dark-mode ul.list-group li:hover) {
+        background-color: #504c4c;
+    }
 </style>

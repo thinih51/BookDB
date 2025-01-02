@@ -14,19 +14,22 @@
 </footer>
 
 <style>
-    /* Footer Styling */
     footer {
         text-align: center;
         padding: 10px 0;
-        background-color: #2c3e50;
-        color: white;
-        margin-top: 30px;
-        font-size: 0.9rem;
+        background-color: #2c3e50 !important;
+        color: white !important;
+        margin-top: 30px !important;
+    }
+
+    :global(body.dark-mode) footer {
+        background-color: #2d2b2b !important;
     }
 
     /* Styling für Texte im Footer */
     footer span {
-        cursor: default; /* Kein Hover-Effekt, da kein Link */
+        cursor: default;
+        /* Kein Hover-Effekt, da kein Link */
         font-weight: 400;
     }
 </style>

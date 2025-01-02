@@ -1,7 +1,7 @@
 /* ======================================================
    General Styling
    ====================================================== */
-   html body {
+html body {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
@@ -114,26 +114,31 @@ body.dark-mode .btn-secondary:hover {
     background-color: #333 !important;
 }
 
-/* ======================================================
-   List Styling
-   ====================================================== */
-ul.list-group li {
-    background-color: #ffffff !important;
-    border: 1px solid #ddd !important;
-    color: #333 !important;
-    padding: 10px 15px !important;
-    margin-bottom: 10px !important;
+.btn-danger {
+    background-color: #dc3545 !important;
+    /* Standard-Rot */
+    color: white !important;
+    border: none !important;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-body.dark-mode ul.list-group li {
-    background-color: #454242 !important;
-    border-color: #5b5858 !important;
-    color: #cccccc !important;
+.btn-danger:hover {
+    background-color: #c82333 !important;
+    /* Etwas dunkleres Rot */
+    color: #f8f9fa !important;
+    /* Leichtes Weiß */
 }
 
-body.dark-mode ul.list-group li:hover {
-    background-color: #504c4c !important;
+body.dark-mode .btn-danger {
+    background-color: #7a1c21 !important;
+    /* Dunkleres Rot für Dark Mode */
+    color: #ffffff !important;
+}
+
+body.dark-mode .btn-danger:hover {
+    background-color: #5f1418 !important;
+    /* Noch dunkleres Rot für Dark Mode */
+    color: #f1f1f1 !important;
 }
 
 /* ======================================================
@@ -157,66 +162,4 @@ section p {
 
 body.dark-mode section h2 {
     color: #f1f1f1 !important;
-}
-
-/* ======================================================
-   Navbar Styling
-   ====================================================== */
-.navbar {
-    background: linear-gradient(90deg, #2c3e50, #4a90e2) !important;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
-}
-
-.navbar-brand {
-    font-family: "Georgia", serif;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4) !important;
-    text-decoration: none !important;
-}
-
-.navbar-nav {
-    margin-left: auto !important;
-}
-
-.nav-link {
-    transition: all 0.3s ease-in-out !important;
-    font-size: 1.1rem !important;
-    color: white !important;
-    text-decoration: none !important;
-}
-
-.nav-link:hover {
-    background-color: rgba(255, 255, 255, 0.2) !important;
-    border-radius: 4px !important;
-    transform: scale(1.05) !important;
-}
-
-body.dark-mode .navbar {
-    background-color: #2d2b2b !important;
-    background-image: none !important;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6) !important;
-}
-
-body.dark-mode .nav-link {
-    color: #aaaaaa !important;
-}
-
-body.dark-mode .nav-link:hover {
-    background-color: rgba(255, 255, 255, 0.1) !important;
-    color: #ffffff !important;
-}
-
-/* ======================================================
-   Footer Styling
-   ====================================================== */
-footer {
-    text-align: center;
-    padding: 10px 0;
-    background-color: #2c3e50 !important;
-    color: white !important;
-    margin-top: 30px !important;
-}
-
-body.dark-mode footer {
-    background-color: #2d2b2b !important;
-    color: #aaaaaa !important;
 }
