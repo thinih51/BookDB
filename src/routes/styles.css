@@ -1,60 +1,147 @@
 /* ======================================================
-   Light Mode (Standard) Styling
+   Root Variables
    ====================================================== */
+:root {
+    /* Light Mode Colors */
+    --background: #e8f0fe;
+    --text: #333;
+    --header: #2c3e50;
+    --subheader: #4a90e2;
+    --button-primary: #4a90e2;
+    --button-primary-hover: #357abf;
+    --button-success: #28a745;
+    --button-success-hover: #218838;
+    --button-secondary: #6c757d;
+    --button-secondary-hover: #5a6268;
+}
 
-/* =====================
-   1) General Styling
-   - Applies a soft gradient background, sets default fonts & colors
-===================== */
+body.dark-mode {
+    /* Dark Mode Colors */
+    --background: #353333;
+    --text: #cccccc;
+    --header: #f1f1f1;
+    --subheader: #b3afa1;
+    --button-primary: #555;
+    --button-primary-hover: #444;
+    --button-success: #2b5f2c;
+    --button-success-hover: #234a24;
+    --button-secondary: #444;
+    --button-secondary-hover: #333;
+}
+
+/* ======================================================
+   General Styling
+   ====================================================== */
 body {
-    margin: 0; /* Removes default browser margin */
-    padding: 0; /* Removes default browser padding */
-    font-family: 'Arial', sans-serif; /* Sets the base font for the entire page */
-    background: linear-gradient(to bottom right, #e8f0fe, #b0c4de); 
-    /* Creates a light, soft gradient background */
-    color: #333; /* Default text color for good contrast on a light background */
-    line-height: 1.6; /* Provides comfortable spacing between text lines */
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 .container {
-    max-width: 1200px; 
-    margin: 0 auto; /* Centers the container horizontally */
-    padding: 20px; /* Adds spacing around content */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-/* =====================
-   2) Header Styling
-   - Styles for site headers, including titles and subtitles
-===================== */
+/* ======================================================
+   Header Styling
+   ====================================================== */
 header {
     text-align: center;
     padding: 20px 0;
-    color: white; /* Default color if a background image or color is behind it */
-    font-family: 'Georgia', serif; /* A more elegant font for headings */
+    font-family: 'Georgia', serif;
+    color: var(--header);
 }
 
 header h1 {
-    font-size: 2.5rem; /* Larger font size for main title */
-    margin-bottom: 10px; 
-    color: #2c3e50; /* Dark blue for improved readability */
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: var(--header);
 }
 
 header p {
     font-size: 1.2rem;
-    color: #4a90e2; /* Lighter blue for a subtle highlight or subheading */
+    color: var(--subheader);
 }
 
-/* =====================
-   3) Section Styling
-   - Margins and basic text alignment for sections
-===================== */
+/* ======================================================
+   Button Styling
+   ====================================================== */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    text-align: center;
+    margin: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--button-primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--button-primary-hover);
+}
+
+.btn-success {
+    background-color: var(--button-success);
+    color: white;
+}
+
+.btn-success:hover {
+    background-color: var(--button-success-hover);
+}
+
+.btn-secondary {
+    background-color: var(--button-secondary);
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: var(--button-secondary-hover);
+}
+
+/* ======================================================
+   List Styling
+   ====================================================== */
+ul.list-group li {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    color: var(--text);
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode ul.list-group li {
+    background-color: #454242;
+    border-color: #5b5858;
+    color: var(--text);
+}
+
+body.dark-mode ul.list-group li:hover {
+    background-color: #504c4c;
+}
+
+/* ======================================================
+   Section Styling
+   ====================================================== */
 section {
-    margin-bottom: 30px; /* Adds space below each section */
+    margin-bottom: 30px;
 }
 
 section h2 {
     text-align: center;
-    color: #2c3e50; /* Matches the darker header color */
+    color: var(--header);
     margin-bottom: 20px;
 }
 
@@ -64,173 +151,87 @@ section p {
     margin-bottom: 10px;
 }
 
-/* =====================
-   4) List Styling
-   - Styles for <ul> with the .list-group class
-===================== */
-ul.list-group {
-    max-width: 600px;
-    margin: 0 auto; /* Centers the list within the container */
-    padding: 0;
-    list-style: none; /* Removes default bullets */
+/* ======================================================
+   Navbar Styling
+   ====================================================== */
+.navbar {
+    background: linear-gradient(90deg, #2c3e50, #4a90e2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-ul.list-group li {
-    background-color: rgba(255, 255, 255, 0.8); 
-    border: 1px solid #ddd; /* Light gray border around list items */
-    padding: 10px 15px; /* Creates consistent spacing within each item */
-    margin-bottom: 10px; /* Adds spacing between list items */
-    border-radius: 5px; /* Slightly rounded corners for a softer look */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light box shadow for depth */
-    color: #333; 
+.navbar-brand {
+    font-family: "Georgia", serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    text-decoration: none;
 }
 
-ul.list-group li:hover {
-    background-color: rgba(255, 255, 255, 1); 
-    /* Slightly brighter background on hover */
+.navbar-nav {
+    margin-left: auto;
 }
 
-/* =====================
-   5) Button Styles
-   - Base styles and variants for .btn classes
-===================== */
+.nav-link {
+    transition: all 0.3s ease-in-out;
+    font-size: 1.1rem;
+    color: white;
+    text-decoration: none !important;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    transform: scale(1.05);
+    text-decoration: none !important;
+}
+
+.navbar .align-items-center {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-nav .nav-item {
+    display: flex;
+    align-items: center;
+}
+
 .btn {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 1rem;
-    border-radius: 5px;
-    text-decoration: none; /* Removes underline from links styled as buttons */
-    text-align: center;
-    margin: 5px; /* Spacing between buttons */
-    transition: background-color 0.3s, color 0.3s;
-    /* Smooth color transition when hovering over the button */
-}
-
-/* -- Primary Button -- */
-.btn-primary {
-    background-color: #4a90e2; /* Bright, attention-grabbing blue */
-    color: white;
-    border: none; /* Removes any default button border */
-}
-.btn-primary:hover {
-    background-color: #357abf; /* Darker shade of blue when hovered */
-}
-
-/* -- Success Button -- */
-.btn-success {
-    background-color: #28a745; /* Typical green for "success" actions */
-    color: white;
-}
-.btn-success:hover {
-    background-color: #218838; /* Slightly darker green on hover */
-}
-
-/* -- Secondary Button -- */
-.btn-secondary {
-    background-color: #6c757d; /* A neutral gray color for secondary actions */
-    color: white;
-}
-.btn-secondary:hover {
-    background-color: #5a6268; /* Darker gray on hover */
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
 }
 
 /* ======================================================
-   Dark Mode Overrides
-   (Activated when <body> has the class "dark-mode")
-   - Switches color palette to a darker theme
-====================================================== */
+   Dark Mode Styling for Footer and Navbar
+   ====================================================== */
 
-/* =====================
-   1) General Dark Mode
-===================== */
-body.dark-mode {
-    background: #353333; /* Deep dark background with a subtle brown/gray tint */
-    color: #cccccc; /* Light gray text for contrast */
+/* Footer Dark Mode */
+body.dark-mode footer {
+    background-color: #2d2b2b;
+    color: #aaaaaa;
 }
 
-body.dark-mode h1,
-body.dark-mode h2,
-body.dark-mode h3,
-body.dark-mode p.lead {
-    color: #f1f1f1; /* Slightly lighter text for headings */
+/* Navbar Dark Mode */
+body.dark-mode .navbar {
+    background-color: #2d2b2b;
+    background-image: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
 }
 
-/* =====================
-   2) Links in Dark Mode
-===================== */
-body.dark-mode a {
-    color: #b3afa1; /* Softer, warm-gray link color */
-}
-body.dark-mode a:hover {
-    color: #b3afa1; 
-    /* Same color: you could optionally change this for a highlight effect */
+body.dark-mode .nav-link {
+    color: #aaaaaa !important;
 }
 
-/* =====================
-   3) Lists in Dark Mode
-   - Adjust .list-group items for dark backgrounds
-===================== */
-body.dark-mode ul.list-group li {
-    background-color: #454242; /* Dark gray for list items */
-    border-color: #5b5858;     /* Matching border for a cohesive look */
-    color: #cccccc;            /* Light text color */
-}
-body.dark-mode ul.list-group li:hover {
-    background-color: #504c4c; /* Slightly lighter on hover */
+body.dark-mode .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff !important;
 }
 
-/* =====================
-   4) Buttons in Dark Mode
-   - Dark-themed overrides for .btn classes
-===================== */
-/* -- Primary (Blue) -- */
-body.dark-mode .btn-primary {
-    background-color: #555; /* Dark gray replacement for bright blue */
-    color: #f1f1f1;
-}
-body.dark-mode .btn-primary:hover {
-    background-color: #444;
+body.dark-mode .btn-outline-light {
+    color: #aaaaaa;
+    border-color: #aaaaaa;
 }
 
-/* -- Success (Green) -- */
-body.dark-mode .btn-success {
-    background-color: #2b5f2c; /* Darker green */
-    color: #f1f1f1;
-}
-body.dark-mode .btn-success:hover {
-    background-color: #234a24;
-}
-
-/* -- Danger (Red) -- */
-body.dark-mode .btn-danger {
-    background-color: #9f1c28; /* Dark red */
-    color: #fff;
-    border: none;
-}
-body.dark-mode .btn-danger:hover {
-    background-color: #871621;
-}
-
-/* -- Secondary (Neutral Gray) -- */
-body.dark-mode .btn-secondary {
-    background-color: #444; 
-    color: #f1f1f1;
-}
-body.dark-mode .btn-secondary:hover {
-    background-color: #333; 
-}
-
-/* =====================
-   5) Dark-Only Sections
-   - Elements intended to appear only in dark contexts
-===================== */
-.dark-section {
-    background-color: #2a2a2a; /* Dark background block or section */
-    color: #f2f2f2;           /* Light text for contrast */
-    padding: 2rem;            /* Spacing to make it stand out */
-    border-radius: 10px;      /* Soft rounding for edges */
-}
-
-.dark-section h1 {
-    color: #ffffff; /* Bright white text for heading inside a dark section */
+body.dark-mode .btn-outline-light:hover {
+    color: #ffffff;
+    border-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.1);
 }

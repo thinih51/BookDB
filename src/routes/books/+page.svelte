@@ -4,33 +4,31 @@
 
     let { data } = $props();
 
-    let searchQuery = writable("");
-    let sortBy = writable("title");
+    const searchQuery = writable("");
+    const sortBy = writable("title");
 
+    // Filter and sort books
     const filteredBooks = derived(
         [searchQuery, sortBy],
-        ([$searchQuery, $sortBy]) => {
-            return data.books
-                .filter(
-                    (book) =>
-                        book.title
-                            .toLowerCase()
-                            .includes($searchQuery.toLowerCase()) ||
-                        book.authors
-                            .join(", ")
-                            .toLowerCase()
-                            .includes($searchQuery.toLowerCase()) ||
-                        book.year.toString().includes($searchQuery),
-                )
+        ([$searchQuery, $sortBy]) =>
+            data.books
+                .filter((book) => {
+                    const query = $searchQuery.toLowerCase();
+                    return (
+                        book.title.toLowerCase().includes(query) ||
+                        book.authors.join(", ").toLowerCase().includes(query) ||
+                        book.year.toString().includes($searchQuery)
+                    );
+                })
                 .sort((a, b) => {
                     if ($sortBy === "title")
                         return a.title.localeCompare(b.title);
                     if ($sortBy === "year") return a.year - b.year;
                     if ($sortBy === "pages") return a.pages - b.pages;
-                });
-        },
+                }),
     );
 
+    // Debounce function for search
     let debounceTimeout;
     function debounceSearch(query) {
         clearTimeout(debounceTimeout);
@@ -43,6 +41,7 @@
 <div class="container mt-3">
     <h1 class="text-center mb-4">All Books</h1>
 
+    <!-- Search and Sort Controls -->
     <div class="row mb-3">
         <div class="col-md-6">
             <input
@@ -61,6 +60,7 @@
         </div>
     </div>
 
+    <!-- Book List -->
     <div class="row">
         {#if $filteredBooks.length > 0}
             {#each $filteredBooks as book}

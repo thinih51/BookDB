@@ -5,14 +5,13 @@
     let { children } = $props();
 </script>
 
-<div>
-    <Navbar />
-</div>
+<!-- Navbar -->
+<Navbar />
 
+<!-- Main Content -->
 <div class="container mt-3">
     {@render children()}
 </div>
 
-<div>
-    <Footer />
-</div>
+<!-- Footer -->
+<Footer />
