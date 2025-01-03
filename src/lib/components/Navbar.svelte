@@ -51,12 +51,12 @@
             <!-- Navbar Links -->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item px-3">
+                    <li class="nav-item px-2">
                         <a class="nav-link text-white fw-bold" href="/books">
                             Show All Books
                         </a>
                     </li>
-                    <li class="nav-item px-3">
+                    <li class="nav-item px-2">
                         <a
                             class="nav-link text-white fw-bold"
                             href="/books/favorites"
@@ -64,7 +64,7 @@
                             Favorites
                         </a>
                     </li>
-                    <li class="nav-item px-3">
+                    <li class="nav-item px-2">
                         <a
                             class="nav-link text-white fw-bold"
                             href="/books/create"
@@ -72,7 +72,7 @@
                             Add New Book
                         </a>
                     </li>
-                    <li class="nav-item px-3">
+                    <li class="nav-item px-2">
                         <a
                             class="nav-link text-white fw-bold"
                             href="/authors/create"
@@ -81,7 +81,7 @@
                         </a>
                     </li>
                     <!-- Dark Mode Toggle Button -->
-                    <li class="nav-item px-3">
+                    <li class="nav-item px-2">
                         <button
                             class="btn btn-outline-light fw-bold align-middle"
                             on:click={toggleDarkMode}

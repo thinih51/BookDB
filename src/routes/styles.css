@@ -180,13 +180,20 @@ body.dark-mode section h2 {
 
 .navbar-nav {
     margin-left: auto !important;
+    display: flex;
+    flex-wrap: nowrap !important;
+    /* Verhindert Umbruch */
 }
 
 .nav-link {
-    transition: all 0.3s ease-in-out !important;
+    white-space: nowrap;
+    /* Verhindert Textumbruch */
+    padding: 0.5rem 1rem !important;
+    /* Zusätzlicher Platz */
     font-size: 1.1rem !important;
     color: white !important;
     text-decoration: none !important;
+    transition: all 0.3s ease-in-out !important;
 }
 
 .nav-link:hover {
@@ -208,4 +215,15 @@ body.dark-mode .nav-link {
 body.dark-mode .nav-link:hover {
     background-color: rgba(255, 255, 255, 0.1) !important;
     color: #ffffff !important;
+}
+
+@media (max-width: 768px) {
+    .navbar-nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-item {
+        margin-bottom: 0.5rem;
+    }
 }
