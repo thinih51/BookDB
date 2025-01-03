@@ -71,7 +71,7 @@
                 </div>
             {/each}
         {:else}
-            <p class="text-center text-muted">No books found.</p>
+            <p class="text-center text-muted">You have no favorite books yet. Start adding some!</p>
         {/if}
     </div>
 </div>

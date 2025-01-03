@@ -1,7 +1,6 @@
 <script>
     import { fly } from "svelte/transition";
     import { backOut } from "svelte/easing";
-    import "./styles.css";
 </script>
 
 <div class="container mt-3">
@@ -21,6 +20,7 @@
         </p>
     </header>
 
+    <!-- Giphy Section -->
     <div class="giphy-container">
         <iframe
             src="https://giphy.com/embed/LkjlH3rVETgsg"
@@ -38,6 +38,7 @@
             via GIPHY
         </a>
     </p>
+
     <!-- Features Section -->
     <section class="mb-5">
         <h2 class="text-center">What Can You Do with ShedaDB?</h2>
@@ -144,7 +145,7 @@
         padding-top: 15%;
         padding-bottom: 15%;
         position: relative;
-        margin: 0 auto; /* Horizontal zentrieren */
+        margin: 0 auto;
         display: flex;
         align-items: center;
         justify-content: center;
