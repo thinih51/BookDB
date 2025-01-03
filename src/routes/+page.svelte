@@ -11,7 +11,7 @@
             class="display-4"
             in:fly={{ y: 100, duration: 500, easing: backOut }}
         >
-            Welcome to ShedaDB - Your Personal Book Database!
+            Welcome to ShedaDB - Your Personal Book Database 📚!
         </h1>
         <p class="lead" in:fly={{ y: 100, duration: 700, easing: backOut }}>
             ShedaDB is the perfect platform for book enthusiasts to organize,
@@ -21,6 +21,23 @@
         </p>
     </header>
 
+    <div class="giphy-container">
+        <iframe
+            src="https://giphy.com/embed/LkjlH3rVETgsg"
+            class="giphy-embed"
+            allowFullScreen
+            title="Book reading cat gif"
+        ></iframe>
+    </div>
+    <p class="giphy-link">
+        <a
+            href="https://giphy.com/gifs/cat-book-reading-LkjlH3rVETgsg"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            via GIPHY
+        </a>
+    </p>
     <!-- Features Section -->
     <section class="mb-5">
         <h2 class="text-center">What Can You Do with ShedaDB?</h2>
@@ -119,5 +136,36 @@
 
     :global(.dark-mode ul.list-group li:hover) {
         background-color: #504c4c;
+    }
+
+    .giphy-container {
+        width: 50%;
+        height: 0;
+        padding-top: 15%;
+        padding-bottom: 15%;
+        position: relative;
+        margin: 0 auto; /* Horizontal zentrieren */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .giphy-embed {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+
+    .giphy-link {
+        text-align: center;
+        margin-top: 10px;
+        font-size: 0.9rem;
+        color: #000000;
+        text-decoration: none;
+    }
+
+    .giphy-link:hover {
+        text-decoration: underline;
     }
 </style>
