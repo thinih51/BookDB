@@ -55,7 +55,6 @@
                             <input type="hidden" name="id" value={book._id} />
                             <button
                                 class="btn btn-danger"
-                                in:scale={{ duration: 300 }}
                             >
                                 Remove from Favorite
                             </button>
@@ -69,7 +68,6 @@
                             <input type="hidden" name="id" value={book._id} />
                             <button
                                 class="btn btn-success"
-                                in:fade={{ duration: 400 }}
                             >
                                 Add to Favorite
                             </button>
