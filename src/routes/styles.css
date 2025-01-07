@@ -1,7 +1,7 @@
 /* ======================================================
    General Styling
    ====================================================== */
-html body {
+   html body {
     height: 100% !important;
     margin: 0 !important;
     padding: 0;
@@ -17,7 +17,9 @@ body.dark-mode {
     color: #cccccc !important;
 }
 
-/* Container */
+/* ======================================================
+   Container
+   ====================================================== */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -91,6 +93,18 @@ body.dark-mode header p {
     background-color: #5a6268 !important;
 }
 
+.btn-danger {
+    background-color: #dc3545 !important;
+    color: white !important;
+    border: none !important;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-danger:hover {
+    background-color: #c82333 !important;
+    color: #f8f9fa !important;
+}
+
 body.dark-mode .btn-primary {
     background-color: #555 !important;
 }
@@ -115,30 +129,13 @@ body.dark-mode .btn-secondary:hover {
     background-color: #333 !important;
 }
 
-.btn-danger {
-    background-color: #dc3545 !important;
-    /* Standard-Rot */
-    color: white !important;
-    border: none !important;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.btn-danger:hover {
-    background-color: #c82333 !important;
-    /* Etwas dunkleres Rot */
-    color: #f8f9fa !important;
-    /* Leichtes Weiß */
-}
-
 body.dark-mode .btn-danger {
     background-color: #7a1c21 !important;
-    /* Dunkleres Rot für Dark Mode */
     color: #ffffff !important;
 }
 
 body.dark-mode .btn-danger:hover {
     background-color: #5f1418 !important;
-    /* Noch dunkleres Rot für Dark Mode */
     color: #f1f1f1 !important;
 }
 
@@ -166,65 +163,71 @@ body.dark-mode section h2 {
 }
 
 /* ======================================================
-   Navbar Styling
+   List Styling
    ====================================================== */
-.navbar {
-    background: linear-gradient(90deg, #2c3e50, #4a90e2) !important;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+ul.list-group {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
 }
 
-.navbar-brand {
-    font-family: "Georgia", serif;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4) !important;
-    text-decoration: none !important;
+ul.list-group li {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #ddd;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: #333;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.navbar-nav {
-    margin-left: auto !important;
+ul.list-group li:hover {
+    background-color: rgba(255, 255, 255, 1);
+    transform: scale(1.02);
+}
+
+body.dark-mode ul.list-group li {
+    background-color: #454242;
+    border-color: #5b5858;
+    color: #cccccc;
+}
+
+body.dark-mode ul.list-group li:hover {
+    background-color: #504c4c;
+}
+
+/* ======================================================
+   Giphy Container Styling
+   ====================================================== */
+.giphy-container {
+    width: 50%;
+    height: 0;
+    padding-top: 15%;
+    padding-bottom: 15%;
+    position: relative;
+    margin: 0 auto;
     display: flex;
-    flex-wrap: nowrap !important;
-    /* Verhindert Umbruch */
+    align-items: center;
+    justify-content: center;
 }
 
-.nav-link {
-    white-space: nowrap;
-    /* Verhindert Textumbruch */
-    padding: 0.5rem 1rem !important;
-    /* Zusätzlicher Platz */
-    font-size: 1.1rem !important;
-    color: white !important;
-    text-decoration: none !important;
-    transition: all 0.3s ease-in-out !important;
+.giphy-embed {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 0;
 }
 
-.nav-link:hover {
-    background-color: rgba(255, 255, 255, 0.2) !important;
-    border-radius: 4px !important;
-    transform: scale(1.05) !important;
+.giphy-link {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #000000;
+    text-decoration: none;
 }
 
-body.dark-mode .navbar {
-    background-color: #2d2b2b !important;
-    background-image: none !important;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6) !important;
-}
-
-body.dark-mode .nav-link {
-    color: #aaaaaa !important;
-}
-
-body.dark-mode .nav-link:hover {
-    background-color: rgba(255, 255, 255, 0.1) !important;
-    color: #ffffff !important;
-}
-
-@media (max-width: 768px) {
-    .navbar-nav {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .nav-item {
-        margin-bottom: 0.5rem;
-    }
+.giphy-link:hover {
+    text-decoration: underline;
 }

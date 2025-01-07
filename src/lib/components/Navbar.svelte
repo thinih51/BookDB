@@ -98,3 +98,64 @@
         </div>
     </nav>
 </div>
+
+<style>
+    .navbar {
+        background: linear-gradient(90deg, #2c3e50, #4a90e2);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .navbar-brand {
+        font-family: "Georgia", serif;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+        text-decoration: none;
+        color: white;
+    }
+
+    .navbar-nav {
+        margin-left: auto;
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    .nav-link {
+        white-space: nowrap;
+        padding: 0.5rem 1rem;
+        font-size: 1.1rem;
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .nav-link:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 4px;
+        transform: scale(1.05);
+    }
+
+    :global(body.dark-mode) .navbar {
+        background-color: #2d2b2b;
+        background-image: none;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    }
+
+    :global(body.dark-mode) .nav-link {
+        color: #aaaaaa;
+    }
+
+    :global(body.dark-mode) .nav-link:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #ffffff;
+    }
+
+    @media (max-width: 768px) {
+        .navbar-nav {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .nav-item {
+            margin-bottom: 0.5rem;
+        }
+    }
+</style>
