@@ -101,51 +101,51 @@
 
 <style>
     .navbar {
-        background: linear-gradient(90deg, #2c3e50, #4a90e2);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        background: linear-gradient(90deg, #2c3e50, #4a90e2) !important;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
     }
 
     .navbar-brand {
         font-family: "Georgia", serif;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-        text-decoration: none;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4) !important;
+        text-decoration: none !important;
         color: white;
     }
 
     .navbar-nav {
-        margin-left: auto;
+        margin-left: auto !important;
         display: flex;
-        flex-wrap: nowrap;
+        flex-wrap: nowrap !important;
     }
 
     .nav-link {
         white-space: nowrap;
-        padding: 0.5rem 1rem;
-        font-size: 1.1rem;
-        color: white;
-        text-decoration: none;
-        transition: all 0.3s ease-in-out;
+        padding: 0.5rem 1rem !important;
+        font-size: 1.1rem !important;
+        color: white !important;
+        text-decoration: none !important;
+        transition: all 0.3s ease-in-out !important;
     }
 
     .nav-link:hover {
-        background-color: rgba(255, 255, 255, 0.2);
-        border-radius: 4px;
-        transform: scale(1.05);
+        background-color: rgba(255, 255, 255, 0.2) !important;
+        border-radius: 4px !important;
+        transform: scale(1.05) !important;
     }
 
     :global(body.dark-mode) .navbar {
-        background-color: #2d2b2b;
-        background-image: none;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+        background-color: #2d2b2b !important;
+        background-image: none !important;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6) !important;
     }
 
     :global(body.dark-mode) .nav-link {
-        color: #aaaaaa;
+        color: #aaaaaa !important;
     }
 
     :global(body.dark-mode) .nav-link:hover {
-        background-color: rgba(255, 255, 255, 0.1);
-        color: #ffffff;
+        background-color: rgba(255, 255, 255, 0.1) !important;
+        color: #ffffff !important;
     }
 
     @media (max-width: 768px) {
