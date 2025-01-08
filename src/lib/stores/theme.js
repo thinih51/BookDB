@@ -1,4 +1,4 @@
 import { writable } from 'svelte/store';
 
-// Standardmäßig false = Light Mode
+// Standardmässig false = Light Mode
 export const darkMode = writable(false);
